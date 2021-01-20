@@ -45,6 +45,7 @@ function TimerContainerReduxState() {
   return (
       <React.Fragment>
         <div id='timer-container' className='timer-container'>
+          <div className='timer-label'>State with redux</div>
           <button onClick={() => handleButtonClick()} className='timer-button'>{setTimerLabel()}</button>
           <div className='timer-value'>{timer.minutes} : {timer.seconds}</div>
         </div>

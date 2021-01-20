@@ -1,5 +1,5 @@
 const initialState = {
-  seconds: 58,
+  seconds: 0,
   minutes: 0
 }
 

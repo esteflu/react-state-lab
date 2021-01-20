@@ -9,10 +9,10 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
       </header>
-      <body>
+      <div>
         <TimerContainerReduxState />
         <TimerContainerClassState />
-      </body>
+      </div>
     </div>
   );
 }

@@ -2,7 +2,7 @@ const initalState = false
 
 const startedReducer = (state = initalState, action) => {
   switch(action.type) {
-    case 'IS_STARTED':
+    case 'IS_TIMER_STARTED':
       return !state
     default:
         return state

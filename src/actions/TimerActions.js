@@ -18,7 +18,7 @@ export const resetTimerSeconds = () => {
 
 export const isStarted = () => {
   return {
-    type: 'IS_STARTED'
+    type: 'IS_TIMER_STARTED'
   }
 }
 

@@ -7,7 +7,6 @@ import store from "../store/store";
 function TimerContainerReduxState() {
   const [intervalId, setIntervalId] = useState(undefined);
   const timer = useSelector(state => state.timer)
-  const started = useSelector(state => state.started)
   const dispatch = useDispatch()
 
   const handleResetClick = () => {
@@ -16,7 +15,7 @@ function TimerContainerReduxState() {
 
   const handleButtonClick = () => {
     dispatch(isStarted())
-    if (!started) {
+    if (getCurrentStateFromStore().started) {
       setIntervalId(startTimer())
     } else {
       stopTimer()
@@ -26,7 +25,7 @@ function TimerContainerReduxState() {
   const startTimer = () => {
     function handleTimer() {
       dispatch(startTimerSeconds())
-      if (store.getState().timer.seconds === 60) {
+      if (getCurrentStateFromStore().seconds === 60) {
         dispatch(resetTimerSeconds())
         dispatch(startTimerMinutes())
       }
@@ -42,7 +41,15 @@ function TimerContainerReduxState() {
   }
 
   const setTimerLabel = () => {
-    return started ? 'Stop timer' : 'Start timer'
+    return getCurrentStateFromStore().started ? 'Stop timer' : 'Start timer'
+  }
+
+  const getCurrentStateFromStore = () => {
+    return {
+      seconds: store.getState().timer.seconds,
+      minutes: store.getState().timer.minutes,
+      started: store.getState().started
+    }
   }
 
   return (

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import {useSelector, useDispatch} from "react-redux";
-import {startTimerMinutes, startTimerSeconds, resetTimerSeconds, resetTimer} from '../actions/TimerActions'
-import {isStarted} from '../actions/TimerActions'
+import {startTimerMinutes, startTimerSeconds, resetTimerSeconds, resetTimer, isStarted} from '../actions/TimerActions'
 import './TimerContainer.css';
 import store from "../store/store";
 

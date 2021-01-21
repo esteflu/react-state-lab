@@ -12,6 +12,13 @@ class TimerContainerClassState extends Component {
     };
   }
 
+  handleResetClick = () => {
+    this.setState({
+      seconds: 0,
+      minutes: 0,
+    })
+  }
+
   handleButtonClick = () => {
     this.setState({isStarted: !this.state.isStarted})
     if (!this.state.isStarted) {
@@ -47,7 +54,10 @@ class TimerContainerClassState extends Component {
     return (
         <React.Fragment>
           <div id='timer-container' className='timer-container'>
-            <div className='timer-label'>State with class</div>
+            <div className='timer-label-container'>
+              <div className='timer-label'>State with class</div>
+              <div onClick={this.handleResetClick} className='timer-reset'>Reset</div>
+            </div>
             <button onClick={this.handleButtonClick} className='timer-button'>{this.setTimerLabel()}</button>
             <div className='timer-value'>{this.state.minutes} : {this.state.seconds}</div>
           </div>

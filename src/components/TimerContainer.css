@@ -29,7 +29,24 @@
 }
 
 #timer-container .timer-label {
-    margin-top: 15px;
+    /*margin-top: 15px;*/
     font-size: 20px;
     font-weight: bold;
+}
+
+#timer-container .timer-label-container {
+    display: flex;
+    align-items: center;
+}
+
+#timer-container .timer-label-container .timer-label {
+
+}
+
+#timer-container .timer-label-container .timer-reset {
+    margin-left: 5px;
+    text-decoration: underline;
+    color: blue;
+    cursor: pointer;
+
 }
